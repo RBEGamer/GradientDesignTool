@@ -51,7 +51,7 @@ def halbachXgradient(linearLength = 140, coilRad = 135, coilLength = 350,numWire
     N               = numHighOrders
     h               = apoTerm
     
-    Nsamp           = np.int(2*Zmax/res)
+    Nsamp           = int(2*Zmax/res)
     z               = np.linspace(-Zmax,Zmax,Nsamp)
     phi             = np.linspace(-1.5*np.pi,0.5*np.pi,Nsamp)
     
@@ -91,7 +91,7 @@ def halbachYgradient(linearLength = 140, coilRad = 135, coilLength = 350, numWir
     print("Number of higher order modes set to 0, not needed for Y and Z")
     h               = apoTerm
     
-    Nsamp           = np.int(2*Zmax/resolution)
+    Nsamp           = int(2*Zmax/resolution)
     z               = np.linspace(-Zmax,Zmax,Nsamp)
     phi             = np.linspace(-np.pi,np.pi,Nsamp)
     
@@ -134,7 +134,7 @@ def halbachZgradient(linearLength = 140, coilRad = 135, coilLength = 350, numWir
     #print("Number of higher order modes set to 0, not needed for Y and Z")
     h               = apoTerm
     
-    Nsamp           = np.int(2*Zmax/resolution)
+    Nsamp           = int(2*Zmax/resolution)
     z               = np.linspace(-Zmax,Zmax,Nsamp)
     phi             = np.linspace(-np.pi,np.pi,Nsamp)+np.pi/4
     
@@ -193,7 +193,7 @@ def calculateBfield(contours, DSV, resolution, coilRad, direction):
     wireCounter = 1
     for wireLevel in wireLevels:
         for wire in wireLevel:
-            print("Simulating wire %.0f of %0.f"%(wireCounter, np.size(wireLevels)))
+            #print("Simulating wire %.0f of %0.f"%(wireCounter, wireLevels))
             wire = np.array(wire, dtype = np.float32)
             wirePath3D =  np.stack((np.cos(wire[:,0])*np.float32(coilRad),np.sin(wire[:,0])*np.float32(coilRad),wire[:,1]),axis=1)
             idS = 1e-7*gradCurrent*(wirePath3D[1:,:] - wirePath3D[:-1,:])
@@ -296,54 +296,3 @@ def exportWires(contours, coilRad, direction, conjoined):
             joinedContour[key] = np.delete(joinedContour[key],np.nonzero(zeroElements), axis = 0)
             
         return joinedContour
-        
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
