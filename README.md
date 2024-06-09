@@ -6,7 +6,7 @@ A design tool for creating gradient coils for Halbach array based MRI systems ba
 Run gradientDesignTool.py to load the GUI. 
 
 ```bash
-$ git clone --depth 1 https://github.com/LUMC-LowFieldMRI/GradientDesignTool
+$ git clone --depth 1 https://github.com/LUMC-LowFieldMRI/GradientDesignTool GradientDesignTool
 $ cd GradientDesignTool
 $ python -m venv venv
 $ source venv/bin/activate
