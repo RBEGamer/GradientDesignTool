@@ -218,7 +218,7 @@ class GDT_GUI(tk.Tk):
         self.contourfig.gca().set_xlabel('Z (mm)')
         self.contourfig.gca().set_ylabel('Y (mm)')
         self.contourfig.gca().set_zlabel('X (mm)')
-        np.warnings.filterwarnings('ignore', category=np.VisibleDeprecationWarning)                 
+        #np.warnings.filterwarnings('ignore', category=np.VisibleDeprecationWarning)                 
         self.length = 0
         for idx, wireLevel in enumerate(wireLevels):
             currentLevel = self.contourData.levels[idx]
